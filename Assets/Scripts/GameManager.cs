@@ -103,6 +103,17 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
+	public void HaxButtonHandler()
+	{
+		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
+		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
+		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
+		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
+		
+		GameOverPanel.SetActive(false);
+		State = GameState.Playing;
+	}
+
 
 	bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
 	{
