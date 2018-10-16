@@ -105,13 +105,16 @@ public class GameManager : MonoBehaviour {
 
 	public void HaxButtonHandler()
 	{
+		if (IAPTracker.ingameGoldPurchase(50))
+		{
 		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
 		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
 		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
 		AllTiles[Random.Range(0,4),Random.Range(0,4)].Number = 0;
 		
 		GameOverPanel.SetActive(false);
-		State = GameState.Playing;
+		State = GameState.Playing;		
+		}	
 	}
 
 

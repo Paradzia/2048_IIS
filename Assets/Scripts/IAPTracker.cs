@@ -227,6 +227,18 @@ public class IAPTracker : MonoBehaviour, IStoreListener {
         return PurchaseProcessingResult.Complete;
     }
 
+    public static bool ingameGoldPurchase(int cost)
+    {
+        var goldValue = PlayerPrefs.GetInt("Gold");        
+        if (goldValue.CompareTo(cost) < 0)
+        {
+            return false;
+        }
+        goldValue -= 50;
+        PlayerPrefs.SetInt("Gold", goldValue);
+        return true;
+    }
+
     public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
     {
         // A product purchase attempt did not succeed. Check failureReason for more detail. Consider sharing 
